@@ -17,14 +17,6 @@ public:
         int index=-1;
         int end=nums.size()-1,start=0;  
         binarysearch(start,end,nums,target,index);
-   /*     if (index==-1 && binarysearch(start,end,nums,target-1,index)!=-1)
-        {
-         index+=1;
-        }
-          else if (index==-1 && binarysearch(start,end,nums,target-1,index)==-1)
-        {
-         index=-1;
-        }*/
     for (int i=1;index==-1;i++)
     {
            binarysearch(start,end,nums,target+i,index);
