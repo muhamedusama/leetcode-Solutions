@@ -1,31 +1,27 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        int n=s.length();
-        string result;
-    for(int i=0;i<n;i++)
-    {
-        if (s[i]>='a' &&s[i]<='z' || s[i]>='A' &&s[i]<='Z' || s[i]>='0' &&s[i]<='9' )
+        string palindrome;
+        stack<int>st;
+        for (int i=0;i<s.length();i++)
         {
-            
-            result+=tolower(s[i]);
+            //cout<<s[i]<<endl;
+            if (s[i]>='a' && s[i]<='z' || s[i]>='A' && s[i]<='Z' || s[i]>='0' && s[i]<='9')
+            { 
+                //cout<<s[i]<<endl;
+                palindrome+=tolower(s[i]);
+               // cout<<palindrome;
+                st.push(tolower(s[i]));
+            }
+             
         }
-    }
-        int n2=result.length();
-        int last=n2-1;
-        if (n2%2==0)
-        n2=n2/2;
-        else if (n2%2==1)
-            n2=(n2/2)+1;
-        
-       // result.tolower();
-         for(int i=0;i<n2;i++)
-    {
-       if (result[i]!=result[last])
-           return false;
-        last--;
-       
-    }
+        //cout<<palindrome;
+        for (int i=0;i<palindrome.length();i++)
+        {
+            if (palindrome[i] != st.top())
+                    return false;
+            st.pop();
+        }
         return true;
     }
 };
