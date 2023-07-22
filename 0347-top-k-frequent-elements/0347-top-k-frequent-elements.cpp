@@ -1,13 +1,12 @@
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
-        map<int,int>mp;
-        int n=nums.size();
-        for (int i=0;i<n;i++)
+   map<int,int>mp;
+        for (int i=0;i<nums.size();i++)
         {
             mp[nums[i]]++;
         }
-        multimap<int, int> sortedMap;
+            multimap<int, int> sortedMap;
          for (const auto& pair : mp) {
         sortedMap.insert({pair.second, pair.first});
     }
