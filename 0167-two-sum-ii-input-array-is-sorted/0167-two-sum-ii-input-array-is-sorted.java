@@ -1,30 +1,22 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int arr[] = new int[2];
-        int counter=0;
-        int frequencyarray[]= new int [4010];
-        
-        for (int i=0;i<numbers.length;i++)
+        int left=0, right=numbers.length-1;
+        while (left<right)
         {
-         frequencyarray[numbers[i]+1000]++;
-        }
-      //  System.out.println(frequencyarray[1007]);
-       
-        for (int i=0;i<numbers.length;i++)
-        {
-            int temp=target-numbers[i];
-            System.out.println(temp);
+            if (numbers[left]+numbers[right]==target)
+            {
+                arr[0]=left+1;
+                arr[1]=right+1;
+                break;
+            }
+             else if (numbers[left]+numbers[right]<target)
+            {
+               left++;
+            }
+            else
+                right--;
             
-            if (frequencyarray[temp+1000]>0 && temp!=numbers[i])
-            {
-                arr[counter]=i+1;
-                counter++;
-            }
-             if (frequencyarray[temp+1000]>1)
-            {
-                arr[counter]=i+1;
-                counter++;
-            }
         }
         return arr;
         
