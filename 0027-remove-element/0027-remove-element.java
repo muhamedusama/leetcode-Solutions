@@ -1,12 +1,12 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-       int removeno=0;
+           int removeno=0;
         for (int i=0 ; i<nums.length;i++)
         {
             if (nums[i]==val)
             { 
                 removeno++;
-                nums[i]=100;
+                nums[i]=101;
             }
         }
         Arrays.sort(nums);
