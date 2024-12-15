@@ -12,21 +12,7 @@ public class Solution {
         }
         for (int i=0;i<nums.Length;i++)
         {
-            int temp=target-nums[i];
-//             if (target >=0 || nums[i]>=0)
-//             {
-//                 temp=Math.Abs(nums[i]-target);
-//             }
-//             else 
-//             {
-//                 if (nums[i]>target)
-//                 temp=target-nums[i];
-//                 else
-//                 temp=nums[i]-target;
-      
-//             }
-            
-           Console.WriteLine(temp);
+            int temp=target-nums[i];            
             if (numbers.ContainsKey(temp))
             {
                 arr[0]=numbers[temp];
